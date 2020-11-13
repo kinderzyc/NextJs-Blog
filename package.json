@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@babel/core": "^7.12.3",
     "axios": "^0.21.0",
     "gray-matter": "^4.0.2",
     "marked": "^1.2.3",
@@ -16,17 +17,22 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "reflect-metadata": "^0.1.13",
+    "regenerator-runtime": "^0.13.7",
     "sass": "^1.28.0",
     "typeorm": "^0.2.29",
     "ua-parser-js": "^0.7.22"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
     "@types/axios": "^0.14.0",
     "@types/marked": "^1.1.0",
     "@types/node": "^14.14.7",
     "@types/react": "^16.9.55",
     "@types/react-dom": "^16.9.9",
     "@types/ua-parser-js": "^0.7.33",
+    "babel-core": "7.0.0-bridge.0",
     "file-loader": "^6.2.0",
     "next-images": "^1.6.2",
     "typescript": "^4.0.5"
