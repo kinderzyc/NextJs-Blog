@@ -5,7 +5,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.CreatePost1605330950691 = void 0;
+exports.CreateUsers1605603674319 = void 0;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
@@ -17,12 +17,12 @@ var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/creat
 
 var _typeorm = require("typeorm");
 
-var CreatePost1605330950691 = /*#__PURE__*/function () {
-  function CreatePost1605330950691() {
-    (0, _classCallCheck2["default"])(this, CreatePost1605330950691);
+var CreateUsers1605603674319 = /*#__PURE__*/function () {
+  function CreateUsers1605603674319() {
+    (0, _classCallCheck2["default"])(this, CreateUsers1605603674319);
   }
 
-  (0, _createClass2["default"])(CreatePost1605330950691, [{
+  (0, _createClass2["default"])(CreateUsers1605603674319, [{
     key: "up",
     value: function () {
       var _up = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(queryRunner) {
@@ -30,21 +30,20 @@ var CreatePost1605330950691 = /*#__PURE__*/function () {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                //升级数据库
                 queryRunner.createTable(new _typeorm.Table({
-                  name: 'posts',
+                  name: 'users',
                   columns: [{
                     name: 'id',
-                    type: 'int',
-                    isPrimary: true,
                     isGenerated: true,
-                    generationStrategy: 'increment'
+                    type: 'int',
+                    generationStrategy: 'increment',
+                    isPrimary: true
                   }, {
-                    name: 'titlle',
+                    name: 'username',
                     type: 'varchar'
                   }, {
-                    name: 'content',
-                    type: 'text'
+                    name: 'password_digest',
+                    type: 'varchar'
                   }]
                 }));
 
@@ -70,8 +69,7 @@ var CreatePost1605330950691 = /*#__PURE__*/function () {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                //降级数据库
-                queryRunner.dropTable('posts');
+                queryRunner.dropTable('users');
 
               case 1:
               case "end":
@@ -88,7 +86,7 @@ var CreatePost1605330950691 = /*#__PURE__*/function () {
       return down;
     }()
   }]);
-  return CreatePost1605330950691;
+  return CreateUsers1605603674319;
 }();
 
-exports.CreatePost1605330950691 = CreatePost1605330950691;
+exports.CreateUsers1605603674319 = CreateUsers1605603674319;
