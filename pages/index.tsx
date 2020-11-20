@@ -1,5 +1,6 @@
 import { UAParser } from 'ua-parser-js'
 import { GetServerSideProps, NextPage } from 'next'
+import { getDatabaseConnection } from 'lib/getDatabaseConnection'
 
 type Props = {
   browser: {
@@ -21,6 +22,8 @@ const index: NextPage<Props> = (props) => {
 export default index;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  const connect = await getDatabaseConnection()// 第一次链接能不能用 get
+  console.log('connect');
   const ua = context.req.headers['user-agent']
   const result = new UAParser(ua).getResult();
   return {
